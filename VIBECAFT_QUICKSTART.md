@@ -4,10 +4,12 @@
 
 已创建的集成文件：
 
-- [x] `src/infra/vibecraft-integration.ts` - 简单集成（推荐）
-- [x] `src/infra/vibecraft-adapter.ts` - 完整适配器
-- [x] `src/plugins/builtin/vibecraft-plugin.ts` - 插件版本
+- [x] `src/infra/vibecraft-integration.ts` - **简单集成（推荐使用）**
+- [x] `src/infra/vibecraft-adapter.ts` - 完整适配器（高级用法）
 - [x] `VIBECAFT_INTEGRATION.md` - 完整文档
+- [x] `VIBECAFT_QUICKSTART.md` - 本快速检查清单
+
+**注意**：插件版本 (`vibecraft-plugin.ts`) 已删除，因为它与 openclaw 的插件系统不兼容。使用 `vibecraft-integration.ts` 即可。
 
 ## 代码检查
 

@@ -29,25 +29,6 @@ const cleanup = enableVibecraft({
 process.on('exit', cleanup)
 ```
 
-### 方法二：通过插件配置（需要插件系统支持）
-
-在你的 `openclaw.json` 中添加：
-
-```json
-{
-  "plugins": [
-    {
-      "id": "builtin:vibecraft",
-      "enabled": true,
-      "config": {
-        "serverUrl": "http://localhost:4003/event",
-        "debug": false
-      }
-    }
-  ]
-}
-```
-
 ### 启动步骤
 
 1. **启动 Vibecraft 服务器**：
@@ -245,11 +226,14 @@ await sendStopEvent({
 
 创建的集成文件：
 
-| 文件 | 描述 |
-|------|------|
-| `src/infra/vibecraft-integration.ts` | 简化版集成，推荐使用 |
-| `src/infra/vibecraft-adapter.ts` | 完整适配器，包含更多功能 |
-| `src/plugins/builtin/vibecraft-plugin.ts` | 插件版本（需要插件系统支持） |
+| 文件 | 描述 | 推荐度 |
+|------|------|--------|
+| `src/infra/vibecraft-integration.ts` | 简化版集成，直接在代码中使用 | ⭐⭐⭐ |
+| `src/infra/vibecraft-adapter.ts` | 完整适配器，包含手动 API | ⭐⭐ |
+| `VIBECAFT_INTEGRATION.md` | 完整集成文档 | - |
+| `VIBECAFT_QUICKSTART.md` | 快速检查清单 | - |
+
+**注意**：插件版本 (`vibecraft-plugin.ts`) 因与 openclaw 插件系统不兼容已被移除。
 
 ## 相关文档
 
